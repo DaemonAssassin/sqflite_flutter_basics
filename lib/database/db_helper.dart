@@ -42,6 +42,12 @@ class DBHelper {
     db.execute(StudentDBConstants.createTableCommand);
   }
 
+  // method to close to db
+  Future<void> closeDatabase() async {
+    Database db = await _getDatabase();
+    db.close();
+  }
+
   /// METHODS TO PERFORM CRUD OPS
   /// method to insert/add data/student to db
   Future<bool> insertStudent(Student student) async {

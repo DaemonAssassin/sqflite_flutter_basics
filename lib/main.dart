@@ -18,6 +18,12 @@ class _MyAppState extends State<MyApp> {
   final DBHelper _helper = DBHelper();
 
   @override
+  void dispose() {
+    _helper.closeDatabase();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
