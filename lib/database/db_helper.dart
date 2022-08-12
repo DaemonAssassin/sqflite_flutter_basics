@@ -42,7 +42,7 @@ class DBHelper {
     db.execute(StudentDBConstants.createTableCommand);
   }
 
-  // method to close to db
+  // method to close the db
   Future<void> closeDatabase() async {
     Database db = await _getDatabase();
     db.close();
